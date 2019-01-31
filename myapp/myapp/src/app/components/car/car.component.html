@@ -6,4 +6,4 @@
     <li *ngFor = "let info of car.info; let i = index">{{ car.info[ i ] }}</li>
 </ul>
 <button (click) = "drive ()">Drive</button>
-<button *ngIf = "car.fuelAmount < 5", (click) = "refuel ()" >Refuel</button>
+<button *ngIf = "car.fuelAmount < 5" (click) = "refuel ()" >Refuel</button>
