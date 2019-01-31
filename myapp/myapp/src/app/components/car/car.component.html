@@ -1,0 +1,9 @@
+<p>make of car -{{ car.make }}</p>
+<p>количество топлива -{{ car.fuelAmount }} литров</p>
+<p>Пробег -{{ car.miliage }} километров</p>
+<ul>
+    <li>Car Info</li>
+    <li *ngFor = "let info of car.info; let i = index">{{ car.info[ i ] }}</li>
+</ul>
+<button (click) = "drive ()">Drive</button>
+<button *ngIf = "car.fuelAmount < 5", (click) = "refuel ()" >Refuel</button>
