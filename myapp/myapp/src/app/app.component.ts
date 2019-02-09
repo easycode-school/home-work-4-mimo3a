@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myapp';
+  name = 'some name';
+  onNameChangeHandler (value) {
+    console.log(value);
+  }
 }

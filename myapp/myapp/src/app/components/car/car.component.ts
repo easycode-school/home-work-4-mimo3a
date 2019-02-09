@@ -20,11 +20,13 @@ export class CarComponent {
         ]
     };
     public miliage = 170;
+    //  Заправка до полного бака 60 литров
     refuel () {
         this.car.fuelAmount = 60;
     }
+    // При каждом клике топливо уменьшается на 1 литр, пробег увеличивается на 20 км
     drive () {
         this.car.fuelAmount --;
-        this.car.miliage ++;
+        this.car.miliage += 20;
     }
 }
