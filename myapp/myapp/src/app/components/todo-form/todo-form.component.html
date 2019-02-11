@@ -1,0 +1,5 @@
+<form (ngSubmit)="onSubmitHandler(addTodoForm)" #addUserForm="ngForm" novalidate>
+    <div [hidden]="todoName.valid || todoName.pristine">Error: Todo required</div>
+    <input type="text" [(ngModel)]="newTodo.todo" name="todo" #todoName='ngModel' required >
+    <button [disabled]="addTodoForm.invalid">Add Todo</button>
+  </form>

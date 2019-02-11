@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myapp';
-  name = 'some name';
-  onNameChangeHandler (value) {
-    console.log(value);
+  public todos = [];
+  onTodoChangeHandler(value) {
+    this.todos.push(Object.assign({}, value));
+    console.log(this.todos);
   }
 }

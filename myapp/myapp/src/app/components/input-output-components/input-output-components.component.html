@@ -1,4 +1,25 @@
-<p>
+<!-- <p>
   {{userName}}
 </p>
-<button (click)="onClickHandler()">Event event</button>
+<button (click)="onClickHandler()">Event event</button> -->
+<form (ngSubmit)="onSubmitHandler(addUserForm)" #addUserForm="ngForm" novalidate>
+  <div [hidden]="userName.valid || userName.pristine">Error: user name required</div>
+  <input type="text" [(ngModel)]="newUser.name" name="name" #userName='ngModel' required >
+  <input type="text" [(ngModel)]="newUser.age" name="age" #userAge='ngModel' required>
+  <button [disabled]="addUserForm.invalid">Add user</button>
+</form>
+<h3>{{ newUser.name }} {{ newUser.age}}</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+    </tr>
+  </tbody>
+</table>

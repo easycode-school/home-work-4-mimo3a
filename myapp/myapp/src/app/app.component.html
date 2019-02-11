@@ -1,4 +1,16 @@
-<app-car></app-car>
-<app-input-output-components [userName]="name" (userNameChange)="onNameChangeHandler($event)"></app-input-output-components>
+<app-todo-form (todoNameChange)="onTodoChangeHandler($event)"></app-todo-form>
+<table>
+    <thead>
+        <th>
+            <tr>{{ todos.todo }} </tr>
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of todos">
+            <td>{{ todo.todo }}</td> 
+        </tr>
+    </tbody>
+</table>
+
 
 
